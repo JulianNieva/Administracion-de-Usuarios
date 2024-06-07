@@ -1,0 +1,71 @@
+<ion-content id="main-content">
+  <div class="ion-text-center">
+      <img class="icon heartbeat" src="assets/icon.png">
+  </div>
+  <ion-card>
+      <ion-card-header class="ion-text-center">  
+          <ion-card-title>Iniciar Sesión</ion-card-title>
+          <ion-card-subtitle>Complete el formulario de ingreso</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+          <form>
+              <ion-item lines="none">
+                  <ion-input type="email" label="Correo Electrónico" labelPlacement="floating" [formControl]="email"></ion-input>
+              </ion-item>
+              <div color="danger" class="ion-text-center" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <ion-text color="danger" *ngIf="email.errors['required']">¡El campo no puede estar vacio!</ion-text>
+                  <ion-text color="danger" *ngIf="email.errors['email']">¡Debe ingresar un mail válido!</ion-text>
+              </div>
+              <br>
+              <ion-item lines="none">
+                  <ion-input type="password" label="Contraseña" labelPlacement="floating" [formControl]="clave"></ion-input>
+              </ion-item>
+              <div color="danger" class="ion-text-center" *ngIf="clave.errors && (clave.dirty || clave.touched)">
+                  <ion-text color="danger" *ngIf="clave.errors['required']">¡El campo no puede estar vacio!</ion-text>
+                  <ion-text color="danger" *ngIf="clave.errors['minlength']">¡Debe haber al menos 6 caracteres!</ion-text>
+              </div>
+              <br>
+              <ion-button (click)="login()" size="default" [disabled]="!isFormValid || loginPressed">
+              <div *ngIf="!loginPressed">Ingresar</div>
+              <ion-spinner *ngIf="loginPressed" name="crescent" color="black"></ion-spinner>
+              </ion-button>
+          </form> 
+          <br>
+          <div class="linea"></div>
+          <ion-card-title class="title-2">Tambien puede seleccionar un usuario</ion-card-title>
+          <ion-menu-toggle>
+              <ion-button>Seleccionar un usuario</ion-button>
+          </ion-menu-toggle>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-menu type="overlay" contentId="main-content">
+  <ion-header>
+      <ion-toolbar>
+          <ion-title>Usuarios</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  <ion-content>
+      <ion-list lines="none">
+          <ion-chip (click)="cargarForm(0)">
+          <ion-avatar>
+              <img src="../../../assets/icons/Admin.png" />
+          </ion-avatar>
+          <h3>Admin</h3>
+          </ion-chip>
+          <ion-chip (click)="cargarForm(1)">
+          <ion-avatar>
+              <img src="../../../assets/icons/Usuario.png" />
+          </ion-avatar>
+          <h3>Usuario</h3>
+          </ion-chip>
+          <ion-chip (click)="cargarForm(2)">
+          <ion-avatar>
+              <img src="../../../assets/icons/Invitado.png" />
+          </ion-avatar>
+          <h3>Invitado</h3>
+          </ion-chip>
+      </ion-list>
+  </ion-content>
+</ion-menu>

@@ -1,0 +1,60 @@
+//FONDO
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+$font: "Raleway", sans-serif;
+
+ion-content {
+    --background: none;
+    font-family: $font;
+}
+
+.contenedor {
+    background-image: url('../../../assets/fondos/backsplash.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+img{
+    width: 100%;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+}
+
+.contenedor-texto{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 40%;
+}
+
+.contenedor-nombre{
+    width: 123px;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.contenedor-curso{
+    width: 100px;
+    margin-left: 40px;
+}
+
+p{
+    color: #002333;
+    font-size: 2rem;
+}
+
+.text-focus-in{-webkit-animation:text-focus-in 2s cubic-bezier(.55,.085,.68,.53) both;animation:text-focus-in 2s cubic-bezier(.55,.085,.68,.53) both}
+@-webkit-keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes text-focus-in{0%{-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+
+
+@-webkit-keyframes slide-in-elliptic-bottom-fwd{0%{-webkit-transform:translateY(600px) rotateX(30deg) scale(0);transform:translateY(600px) rotateX(30deg) scale(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:0}100%{-webkit-transform:translateY(0) rotateX(0) scale(1);transform:translateY(0) rotateX(0) scale(1);-webkit-transform-origin:50% -1400px;transform-origin:50% -1400px;opacity:1}}@keyframes slide-in-elliptic-bottom-fwd{0%{-webkit-transform:translateY(600px) rotateX(30deg) scale(0);transform:translateY(600px) rotateX(30deg) scale(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:0}100%{-webkit-transform:translateY(0) rotateX(0) scale(1);transform:translateY(0) rotateX(0) scale(1);-webkit-transform-origin:50% -1400px;transform-origin:50% -1400px;opacity:1}}
+.slide-in-elliptic-bottom-fwd{-webkit-animation:slide-in-elliptic-bottom-fwd 2.5s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-elliptic-bottom-fwd 2.5s cubic-bezier(.25,.46,.45,.94) both}

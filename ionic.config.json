@@ -1,0 +1,7 @@
+{
+  "name": "carga de credito",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
